@@ -1,0 +1,474 @@
+{
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('7b478b64-b31b-4269-9a0c-d45b43bcedc2')/calendars('AQMkAGEzNTUANjAxNC05MDM2LTQ5ZWItYjNhNC1jMTlmMTIzNWYzZTUARgAAAyrQbR3LuYhEmyaH_N3p3k4HAPGwu2F9XdRKjPG8iDTAsjoAAAIBBgAAAPGwu2F9XdRKjPG8iDTAsjoAAAIsswAAAA%3D%3D')/calendarView",
+    "value": [
+        {
+            "@odata.etag": "W/\"8bC7YX1d1EqM8byINMCyOgAATKwUUQ==\"",
+            "id": "AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh-jd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tl-AAA=",
+            "createdDateTime": "2023-07-10T08:18:07.1728253Z",
+            "lastModifiedDateTime": "2023-07-11T12:48:47.6732982Z",
+            "changeKey": "8bC7YX1d1EqM8byINMCyOgAATKwUUQ==",
+            "categories": [],
+            "transactionId": "5bbbf2d8-b07f-8056-68a6-297e8debffa5",
+            "originalStartTimeZone": "Middle East Standard Time",
+            "originalEndTimeZone": "Middle East Standard Time",
+            "iCalUId": "040000008200E00074C5B7101A82E008000000004DFA620E07B3D90100000000000000001000000039769B5CC0020F45A7105EE139DA7D8D",
+            "reminderMinutesBeforeStart": 15,
+            "isReminderOn": false,
+            "hasAttachments": false,
+            "subject": "HUTA - Ticket 3884 - Follow up on EDMCS-3770 Vendor Account Statment Total and Sign Issues",
+            "bodyPreview": "",
+            "importance": "normal",
+            "sensitivity": "normal",
+            "isAllDay": false,
+            "isCancelled": false,
+            "isOrganizer": true,
+            "responseRequested": true,
+            "seriesMasterId": null,
+            "showAs": "busy",
+            "type": "singleInstance",
+            "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh%2Fjd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tl%2FAAA%3D&exvsurl=1&path=/calendar/item",
+            "onlineMeetingUrl": null,
+            "isOnlineMeeting": false,
+            "onlineMeetingProvider": "unknown",
+            "allowNewTimeProposals": true,
+            "occurrenceId": null,
+            "isDraft": false,
+            "hideAttendees": false,
+            "responseStatus": {
+                "response": "organizer",
+                "time": "0001-01-01T00:00:00Z"
+            },
+            "body": {
+                "contentType": "html",
+                "content": ""
+            },
+            "start": {
+                "dateTime": "2023-07-10T06:30:00.0000000",
+                "timeZone": "UTC"
+            },
+            "end": {
+                "dateTime": "2023-07-10T07:30:00.0000000",
+                "timeZone": "UTC"
+            },
+            "location": {
+                "displayName": "",
+                "locationType": "default",
+                "uniqueIdType": "unknown",
+                "address": {},
+                "coordinates": {}
+            },
+            "locations": [],
+            "recurrence": null,
+            "attendees": [],
+            "organizer": {
+                "emailAddress": {
+                    "name": "Abdel Rahman Moustafa",
+                    "address": "amoustafa@edm.group"
+                }
+            },
+            "onlineMeeting": null
+        },
+        {
+            "@odata.etag": "W/\"8bC7YX1d1EqM8byINMCyOgAATKwUTw==\"",
+            "id": "AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh-jd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmBAAA=",
+            "createdDateTime": "2023-07-10T08:21:47.3330675Z",
+            "lastModifiedDateTime": "2023-07-11T12:48:45.7426743Z",
+            "changeKey": "8bC7YX1d1EqM8byINMCyOgAATKwUTw==",
+            "categories": [],
+            "transactionId": "3d4685fa-9546-aa52-9d6b-6184c60f0600",
+            "originalStartTimeZone": "Middle East Standard Time",
+            "originalEndTimeZone": "Middle East Standard Time",
+            "iCalUId": "040000008200E00074C5B7101A82E00800000000E1009D9107B3D901000000000000000010000000C27B9407E22A2E42BB68CFFFB3326873",
+            "reminderMinutesBeforeStart": 15,
+            "isReminderOn": false,
+            "hasAttachments": false,
+            "subject": "HUTA - General ledger entry Incoming document not change when change the selected line at HUTA",
+            "bodyPreview": "",
+            "importance": "normal",
+            "sensitivity": "normal",
+            "isAllDay": false,
+            "isCancelled": false,
+            "isOrganizer": true,
+            "responseRequested": true,
+            "seriesMasterId": null,
+            "showAs": "busy",
+            "type": "singleInstance",
+            "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh%2Fjd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmBAAA%3D&exvsurl=1&path=/calendar/item",
+            "onlineMeetingUrl": null,
+            "isOnlineMeeting": false,
+            "onlineMeetingProvider": "unknown",
+            "allowNewTimeProposals": true,
+            "occurrenceId": null,
+            "isDraft": false,
+            "hideAttendees": false,
+            "responseStatus": {
+                "response": "organizer",
+                "time": "0001-01-01T00:00:00Z"
+            },
+            "body": {
+                "contentType": "html",
+                "content": ""
+            },
+            "start": {
+                "dateTime": "2023-07-10T07:30:00.0000000",
+                "timeZone": "UTC"
+            },
+            "end": {
+                "dateTime": "2023-07-10T07:50:00.0000000",
+                "timeZone": "UTC"
+            },
+            "location": {
+                "displayName": "",
+                "locationType": "default",
+                "uniqueIdType": "unknown",
+                "address": {},
+                "coordinates": {}
+            },
+            "locations": [],
+            "recurrence": null,
+            "attendees": [],
+            "organizer": {
+                "emailAddress": {
+                    "name": "Abdel Rahman Moustafa",
+                    "address": "amoustafa@edm.group"
+                }
+            },
+            "onlineMeeting": null
+        },
+        {
+            "@odata.etag": "W/\"8bC7YX1d1EqM8byINMCyOgAATKwUUA==\"",
+            "id": "AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh-jd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmAAAA=",
+            "createdDateTime": "2023-07-10T08:19:25.404721Z",
+            "lastModifiedDateTime": "2023-07-11T12:48:47.2181185Z",
+            "changeKey": "8bC7YX1d1EqM8byINMCyOgAATKwUUA==",
+            "categories": [],
+            "transactionId": "d8bd1889-74e3-d917-667a-1af29a0151e0",
+            "originalStartTimeZone": "Middle East Standard Time",
+            "originalEndTimeZone": "Middle East Standard Time",
+            "iCalUId": "040000008200E00074C5B7101A82E008000000005EBD043D07B3D901000000000000000010000000897BA8DA05FA76479E4906C61409D327",
+            "reminderMinutesBeforeStart": 15,
+            "isReminderOn": false,
+            "hasAttachments": false,
+            "subject": "SETS - Add Customer Name 2 to Customers List and Card from Email",
+            "bodyPreview": "",
+            "importance": "normal",
+            "sensitivity": "normal",
+            "isAllDay": false,
+            "isCancelled": false,
+            "isOrganizer": true,
+            "responseRequested": true,
+            "seriesMasterId": null,
+            "showAs": "busy",
+            "type": "singleInstance",
+            "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh%2Fjd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmAAAA%3D&exvsurl=1&path=/calendar/item",
+            "onlineMeetingUrl": null,
+            "isOnlineMeeting": false,
+            "onlineMeetingProvider": "unknown",
+            "allowNewTimeProposals": true,
+            "occurrenceId": null,
+            "isDraft": false,
+            "hideAttendees": false,
+            "responseStatus": {
+                "response": "organizer",
+                "time": "0001-01-01T00:00:00Z"
+            },
+            "body": {
+                "contentType": "html",
+                "content": ""
+            },
+            "start": {
+                "dateTime": "2023-07-10T07:50:00.0000000",
+                "timeZone": "UTC"
+            },
+            "end": {
+                "dateTime": "2023-07-10T08:20:00.0000000",
+                "timeZone": "UTC"
+            },
+            "location": {
+                "displayName": "",
+                "locationType": "default",
+                "uniqueIdType": "unknown",
+                "address": {},
+                "coordinates": {}
+            },
+            "locations": [],
+            "recurrence": null,
+            "attendees": [],
+            "organizer": {
+                "emailAddress": {
+                    "name": "Abdel Rahman Moustafa",
+                    "address": "amoustafa@edm.group"
+                }
+            },
+            "onlineMeeting": null
+        },
+        {
+            "@odata.etag": "W/\"8bC7YX1d1EqM8byINMCyOgAATKvtTw==\"",
+            "id": "AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh-jd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmCAAA=",
+            "createdDateTime": "2023-07-10T10:27:37.3348054Z",
+            "lastModifiedDateTime": "2023-07-10T10:29:07.5870502Z",
+            "changeKey": "8bC7YX1d1EqM8byINMCyOgAATKvtTw==",
+            "categories": [],
+            "transactionId": "f2c21bc0-bb1a-838f-7d50-595853af8bd7",
+            "originalStartTimeZone": "Middle East Standard Time",
+            "originalEndTimeZone": "Middle East Standard Time",
+            "iCalUId": "040000008200E00074C5B7101A82E00800000000816AC42519B3D901000000000000000010000000FDA1CCF1D6096F4CB7B6B49F9A80A384",
+            "reminderMinutesBeforeStart": 15,
+            "isReminderOn": true,
+            "hasAttachments": false,
+            "subject": "BAAZEEM - Customize profile to hide selected group",
+            "bodyPreview": "",
+            "importance": "normal",
+            "sensitivity": "normal",
+            "isAllDay": false,
+            "isCancelled": false,
+            "isOrganizer": true,
+            "responseRequested": true,
+            "seriesMasterId": null,
+            "showAs": "busy",
+            "type": "singleInstance",
+            "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh%2Fjd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmCAAA%3D&exvsurl=1&path=/calendar/item",
+            "onlineMeetingUrl": null,
+            "isOnlineMeeting": false,
+            "onlineMeetingProvider": "unknown",
+            "allowNewTimeProposals": true,
+            "occurrenceId": null,
+            "isDraft": false,
+            "hideAttendees": false,
+            "responseStatus": {
+                "response": "organizer",
+                "time": "0001-01-01T00:00:00Z"
+            },
+            "body": {
+                "contentType": "html",
+                "content": ""
+            },
+            "start": {
+                "dateTime": "2023-07-10T08:50:00.0000000",
+                "timeZone": "UTC"
+            },
+            "end": {
+                "dateTime": "2023-07-10T09:55:00.0000000",
+                "timeZone": "UTC"
+            },
+            "location": {
+                "displayName": "",
+                "locationType": "default",
+                "uniqueIdType": "unknown",
+                "address": {},
+                "coordinates": {}
+            },
+            "locations": [],
+            "recurrence": null,
+            "attendees": [],
+            "organizer": {
+                "emailAddress": {
+                    "name": "Abdel Rahman Moustafa",
+                    "address": "amoustafa@edm.group"
+                }
+            },
+            "onlineMeeting": null
+        },
+        {
+            "@odata.etag": "W/\"8bC7YX1d1EqM8byINMCyOgAATKv0/g==\"",
+            "id": "AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh-jd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmDAAA=",
+            "createdDateTime": "2023-07-10T10:31:41.421314Z",
+            "lastModifiedDateTime": "2023-07-10T11:51:43.040888Z",
+            "changeKey": "8bC7YX1d1EqM8byINMCyOgAATKv0/g==",
+            "categories": [],
+            "transactionId": "62adcbc6-7bda-9fc9-747f-026b6181e103",
+            "originalStartTimeZone": "Middle East Standard Time",
+            "originalEndTimeZone": "Middle East Standard Time",
+            "iCalUId": "040000008200E00074C5B7101A82E00800000000EAF13FB719B3D9010000000000000000100000001866072DF941824CB08DE27E2B8F8EAD",
+            "reminderMinutesBeforeStart": 15,
+            "isReminderOn": true,
+            "hasAttachments": false,
+            "subject": "EDM - BAAZEEM - Customize profile to hide selected group",
+            "bodyPreview": "",
+            "importance": "normal",
+            "sensitivity": "normal",
+            "isAllDay": false,
+            "isCancelled": false,
+            "isOrganizer": true,
+            "responseRequested": true,
+            "seriesMasterId": null,
+            "showAs": "busy",
+            "type": "singleInstance",
+            "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh%2Fjd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmDAAA%3D&exvsurl=1&path=/calendar/item",
+            "onlineMeetingUrl": null,
+            "isOnlineMeeting": false,
+            "onlineMeetingProvider": "unknown",
+            "allowNewTimeProposals": true,
+            "occurrenceId": null,
+            "isDraft": false,
+            "hideAttendees": false,
+            "responseStatus": {
+                "response": "organizer",
+                "time": "0001-01-01T00:00:00Z"
+            },
+            "body": {
+                "contentType": "html",
+                "content": ""
+            },
+            "start": {
+                "dateTime": "2023-07-10T10:15:00.0000000",
+                "timeZone": "UTC"
+            },
+            "end": {
+                "dateTime": "2023-07-10T11:30:00.0000000",
+                "timeZone": "UTC"
+            },
+            "location": {
+                "displayName": "",
+                "locationType": "default",
+                "uniqueIdType": "unknown",
+                "address": {},
+                "coordinates": {}
+            },
+            "locations": [],
+            "recurrence": null,
+            "attendees": [],
+            "organizer": {
+                "emailAddress": {
+                    "name": "Abdel Rahman Moustafa",
+                    "address": "amoustafa@edm.group"
+                }
+            },
+            "onlineMeeting": null
+        },
+        {
+            "@odata.etag": "W/\"8bC7YX1d1EqM8byINMCyOgAATKv1DQ==\"",
+            "id": "AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh-jd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmEAAA=",
+            "createdDateTime": "2023-07-10T11:53:49.8370391Z",
+            "lastModifiedDateTime": "2023-07-10T11:53:50.6438017Z",
+            "changeKey": "8bC7YX1d1EqM8byINMCyOgAATKv1DQ==",
+            "categories": [],
+            "transactionId": "8a54e82d-d390-586e-6967-ab05281df6ac",
+            "originalStartTimeZone": "Middle East Standard Time",
+            "originalEndTimeZone": "Middle East Standard Time",
+            "iCalUId": "040000008200E00074C5B7101A82E00800000000C41CD13025B3D901000000000000000010000000E6ED3B0239E77D4E99BB3897ECB402F7",
+            "reminderMinutesBeforeStart": 15,
+            "isReminderOn": true,
+            "hasAttachments": false,
+            "subject": "HUTA - Ticket 3884 - Follow up on EDMCS-3770 Vendor Account Statment Total and Sign Issues",
+            "bodyPreview": "",
+            "importance": "normal",
+            "sensitivity": "normal",
+            "isAllDay": false,
+            "isCancelled": false,
+            "isOrganizer": true,
+            "responseRequested": true,
+            "seriesMasterId": null,
+            "showAs": "busy",
+            "type": "singleInstance",
+            "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh%2Fjd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmEAAA%3D&exvsurl=1&path=/calendar/item",
+            "onlineMeetingUrl": null,
+            "isOnlineMeeting": false,
+            "onlineMeetingProvider": "unknown",
+            "allowNewTimeProposals": true,
+            "occurrenceId": null,
+            "isDraft": false,
+            "hideAttendees": false,
+            "responseStatus": {
+                "response": "organizer",
+                "time": "0001-01-01T00:00:00Z"
+            },
+            "body": {
+                "contentType": "html",
+                "content": ""
+            },
+            "start": {
+                "dateTime": "2023-07-10T11:30:00.0000000",
+                "timeZone": "UTC"
+            },
+            "end": {
+                "dateTime": "2023-07-10T11:45:00.0000000",
+                "timeZone": "UTC"
+            },
+            "location": {
+                "displayName": "",
+                "locationType": "default",
+                "uniqueIdType": "unknown",
+                "address": {},
+                "coordinates": {}
+            },
+            "locations": [],
+            "recurrence": null,
+            "attendees": [],
+            "organizer": {
+                "emailAddress": {
+                    "name": "Abdel Rahman Moustafa",
+                    "address": "amoustafa@edm.group"
+                }
+            },
+            "onlineMeeting": null
+        },
+        {
+            "@odata.etag": "W/\"8bC7YX1d1EqM8byINMCyOgAATKv5Ag==\"",
+            "id": "AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh-jd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmFAAA=",
+            "createdDateTime": "2023-07-10T14:53:59.2733435Z",
+            "lastModifiedDateTime": "2023-07-10T14:54:00.4922341Z",
+            "changeKey": "8bC7YX1d1EqM8byINMCyOgAATKv5Ag==",
+            "categories": [],
+            "transactionId": "14e74b82-a026-cacd-ffec-88c852745941",
+            "originalStartTimeZone": "Middle East Standard Time",
+            "originalEndTimeZone": "Middle East Standard Time",
+            "iCalUId": "040000008200E00074C5B7101A82E0080000000072FFBE5B3EB3D90100000000000000001000000054EC201DE5B1254792398F46360FC9D7",
+            "reminderMinutesBeforeStart": 15,
+            "isReminderOn": true,
+            "hasAttachments": false,
+            "subject": "HUTA - General ledger entry Incoming document not change when change the selected line at HUTA",
+            "bodyPreview": "",
+            "importance": "normal",
+            "sensitivity": "normal",
+            "isAllDay": false,
+            "isCancelled": false,
+            "isOrganizer": true,
+            "responseRequested": true,
+            "seriesMasterId": null,
+            "showAs": "busy",
+            "type": "singleInstance",
+            "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGEzNTU2MDE0LTkwMzYtNDllYi1iM2E0LWMxOWYxMjM1ZjNlNQBGAAAAAAAq0G0dy7mIRJsmh%2Fjd6d5OBwDxsLthfV3USozxvIg0wLI6AAAAACS1AADxsLthfV3USozxvIg0wLI6AABM2tmFAAA%3D&exvsurl=1&path=/calendar/item",
+            "onlineMeetingUrl": null,
+            "isOnlineMeeting": false,
+            "onlineMeetingProvider": "unknown",
+            "allowNewTimeProposals": true,
+            "occurrenceId": null,
+            "isDraft": false,
+            "hideAttendees": false,
+            "responseStatus": {
+                "response": "organizer",
+                "time": "0001-01-01T00:00:00Z"
+            },
+            "body": {
+                "contentType": "html",
+                "content": ""
+            },
+            "start": {
+                "dateTime": "2023-07-10T12:00:00.0000000",
+                "timeZone": "UTC"
+            },
+            "end": {
+                "dateTime": "2023-07-10T15:00:00.0000000",
+                "timeZone": "UTC"
+            },
+            "location": {
+                "displayName": "",
+                "locationType": "default",
+                "uniqueIdType": "unknown",
+                "address": {},
+                "coordinates": {}
+            },
+            "locations": [],
+            "recurrence": null,
+            "attendees": [],
+            "organizer": {
+                "emailAddress": {
+                    "name": "Abdel Rahman Moustafa",
+                    "address": "amoustafa@edm.group"
+                }
+            },
+            "onlineMeeting": null
+        }
+    ]
+}
