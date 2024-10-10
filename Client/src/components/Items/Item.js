@@ -59,8 +59,8 @@ const Item = ({ item, setIsChange, subItems }) => {
                 setTextMessage(`Item has been deleted success`)
                 setShowMessage(true)
             } else {
-                setError(data.error.message)
-                setTextMessage(data.error.message)
+                setError(data.error)
+                setTextMessage(data.error)
                 setShowMessage(true)
             }
 
@@ -89,8 +89,8 @@ const Item = ({ item, setIsChange, subItems }) => {
                     setTextMessage(`Item has been modified success`)
                     setShowMessage(true)
                 } else {
-                    setError(data.error.message)
-                    setTextMessage(data.error.message)
+                    setError(data.error)
+                    setTextMessage(data.error)
                     setShowMessage(true)
                 }
             }
@@ -120,8 +120,8 @@ const Item = ({ item, setIsChange, subItems }) => {
                 setTextMessage(`Item has been added success`)
                 setShowMessage(true)
             } else {
-                setError(data.error.message)
-                setTextMessage(data.error.message)
+                setError(data.error)
+                setTextMessage(data.error)
                 setShowMessage(true)
             }
 
@@ -139,7 +139,7 @@ const Item = ({ item, setIsChange, subItems }) => {
             key={item.id}
         >
             <div className="flex justify-between items-center">
-                <p className="text-[1rem] text-[blue]">{item.caption}</p>
+                <p className="text-[1rem] text-[#0000FF]">{item.caption}</p>
                 <div className="flex items-center gap-[0.7rem] text-[0.8rem]">
 
                     <ExpandMoreIcon
@@ -167,13 +167,13 @@ const Item = ({ item, setIsChange, subItems }) => {
                             TransitionComponent={Fade}
                         >
                             <MenuItem onClick={() => openAddDialog()}>
-                                <span className='text-[blue] text-[0.8rem]'>Add</span>
+                                <span className='text-[#0000FF] text-[0.8rem]'>Add</span>
                             </MenuItem>
                             <MenuItem onClick={() => openModifyDialog()}>
-                                <span className='text-[blue] text-[0.8rem]'>Modify</span>
+                                <span className='text-[#0000FF] text-[0.8rem]'>Modify</span>
                             </MenuItem>
                             <MenuItem onClick={() => openDeleteDialog()}>
-                                <span className='text-[blue] text-[0.8rem]'>Delete</span>
+                                <span className='text-[#0000FF] text-[0.8rem]'>Delete</span>
                             </MenuItem>
                         </Menu>
                     </div>
@@ -183,7 +183,7 @@ const Item = ({ item, setIsChange, subItems }) => {
                 isActive[item.id] &&
                 < div className="w-[100%] flex flex-column transition duration-300">
                     {
-                        subItems.filter(e => e.itemid === item.id).map((item,i) => (
+                        subItems.filter(e => e.itemid === item.id)?.map((item,i) => (
                             <SubItem item={item} key={i}/>
                         ))
                     }

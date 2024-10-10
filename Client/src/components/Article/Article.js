@@ -31,8 +31,8 @@ const Article = ({ article, setIsChange }) => {
                 setTextMessage(`Item has been deleted success`)
                 setShowMessage(true)
             } else {
-                setError(data.error.message)
-                setTextMessage(data.error.message)
+                setError(data.error)
+                setTextMessage(data.error)
                 setShowMessage(true)
             }
 
@@ -74,7 +74,7 @@ const Article = ({ article, setIsChange }) => {
             {
                 article.code &&
                 <div className="relative w-[100%]">
-                    <pre className="relative text-[rgb(0,120,180)] bg-dark rounded-[5px] overflow-auto w-[100%] max-h-[500px] p-[1rem]">
+                    <pre className="relative text-[#9cdcfe] bg-dark rounded-[5px] overflow-auto w-[100%] max-h-[500px] p-[1rem]">
                         {article.code}
                     </pre>
                     <div className="absolute top-[1rem] right-[1rem] cursor-pointer">

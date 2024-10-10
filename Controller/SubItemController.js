@@ -1,34 +1,33 @@
-const { db } = require("@vercel/postgres")
+const sql = require('mssql');
+const { config } = require('../Config/ConnectDB');
 
 const AddSubItem = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        insert into subitem (caption,itemid) values (${req.body.caption},${req.body.itemid})
+        const { userid } = req.body
+        await sql.connect(config);
+        await sql.query`
+            INSERT INTO subitem (caption, itemid,userid) 
+            VALUES (${req.body.caption}, ${req.body.itemid},${userid})
         `
-        .then(() => res.json({ status: "ok" }))
-        .catch(error => res.json({ status: "error", error }))
+        return res.json({ status: "ok" })
     } catch (error) {
-        return res.json({ status: "error", error })
+        return res.json({ status: "error", error:error.message })
     }
 }
 
 const DeleteSubItem = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        delete from article where subitemid = ${req.params.id};
+        const { userid } = req.body
+        await sql.connect(config);
+        await sql.query`
+            delete from article where subitemid = ${req.params.id} and userid = ${userid};
         `
-        .then(() => {
-            db.sql`
-            delete from subitem where id = ${req.params.id};
-            `
-            .then(() => res.json({ status: "ok" }))
-            .catch(error => res.json({ status: "error", error }))
-        })
-        .catch(error => res.json({ status: "error", error }))
+        await sql.query`
+        delete from subitem where id = ${req.params.id};
+        `
+        return res.json({ status: "ok" })
     } catch (error) {
-        return res.json({ status: "error", error })
+        return res.json({ status: "error", error:error.message })
     }
 }
 

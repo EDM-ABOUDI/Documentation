@@ -5,7 +5,6 @@ import Item from "../Items/Item"
 import Message from "../Dialog/Message"
 import { FaPlus } from "react-icons/fa"
 import Add from "../Dialog/Add"
-import axios from "axios"
 import { User } from "../../App"
 
 const Navigation = () => {
@@ -27,8 +26,7 @@ const Navigation = () => {
         const getItems = async () => {
             try {
                 const { data } = await api.get('/items')
-
-                if (data.status = "ok") {
+                if (data.status == "ok") {
                     setItems(data.items)
                     setFilteredItems(data.items)
                     setSubItems(data.subitems)
@@ -36,8 +34,8 @@ const Navigation = () => {
                         setIsActive(old => old[item.id] ? ({ ...old }) : ({ ...old, [item.id]: false }))
                     })
                 } else {
-                    setError(data.error.message)
-                    setTextMessage(data.error.message)
+                    setError(data.error)
+                    setTextMessage(data.error)
                     setShowMessage(true)
                 }
             } catch (error) {
@@ -67,25 +65,21 @@ const Navigation = () => {
             const { data } = await api.post(`/items/add`, {
                 caption: caption,
             })
-
-            if (data.status = "ok") {
+            if (data.status == "ok") {
                 user.setIsChange(old => !old)
                 setTextMessage(`Item has been added success`)
                 setShowMessage(true)
             } else {
-                setError(data.error.message)
-                setTextMessage(data.error.message)
+                setError(data.error)
+                setTextMessage(data.error)
                 setShowMessage(true)
             }
-
-
         } catch (error) {
             setError(error.message)
             setTextMessage(error.message)
             setShowMessage(true)
         }
     }
-
     return (
         <header className={`h-[100vh] overflow-y-auto overflow-x-hidden flex flex-column w-[300px] absolute z-50 lg:relative top-0 transition duration-300 ${isOpen ? 'left-0' : 'left-[-300px] lg:left-0'} px-[0.5rem] py-[1rem] bg-[rgba(248,248,248)] rounded`}>
             <div className="block">
@@ -100,7 +94,7 @@ const Navigation = () => {
                 {/* Button Add */}
                 <div>
                     <button
-                        className="flex gap-[0.2rem] bg-[blue] py-[0.2rem] px-[0.5rem] rounded-[3px] text-white text-[0.8rem] fw-bold items-center"
+                        className="flex gap-[0.2rem] bg-[#0000FF] py-[0.5rem] px-[0.5rem] rounded-[3px] text-white text-[0.8rem] fw-bold items-center"
                         onClick={() => openAddDialog()}
                     >
                         Add Item <FaPlus />
@@ -115,7 +109,7 @@ const Navigation = () => {
             </div>
             <div className="w-[100%] flex flex-column">
                 {
-                    items.map(item => (
+                    items?.map(item => (
                         <Item
                             key={item.id}
                             item={item}

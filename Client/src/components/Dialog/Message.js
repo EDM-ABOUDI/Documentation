@@ -5,7 +5,7 @@ const Message = ({ status, text, setShowMessage }) => {
     useEffect(() => {
         setTimeout(() => {
             setShowMessage(false)
-        }, 2000)
+        }, 4000)
     })
     return (
         status === "ok" ?

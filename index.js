@@ -14,20 +14,28 @@ const cors = require("cors")
 //body parser
 const bodyParser = require("body-parser")
 
+//Cookie Parser
+const cookieParser = require('cookie-parser')
+
 //middleware
 app.use(cors())
 app.use(bodyParser.json({ extended: true }))
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cookieParser())
+// app.use(express.cookieParser())
 
 //routes
 
 const ItemsRouter = require("./Router/ItemsRouter")
 const SubItemsRouter = require("./Router/SubItemsRouter")
 const ArticlesRouter = require("./Router/ArticlesRouter")
+const UsersRouter = require("./Router/UserRouter")
+const { CheckUser } = require("./Controller/UserController")
 
-app.use('/api/items', ItemsRouter)
-app.use('/api/items/sub', SubItemsRouter)
-app.use('/api/items/sub',ArticlesRouter)
+app.use('/api/items', CheckUser, ItemsRouter)
+app.use('/api/items/sub', CheckUser, SubItemsRouter)
+app.use('/api/items/sub', CheckUser, ArticlesRouter)
+app.use('/api/user', UsersRouter)
 
 // client routes
 app.use(express.static(path.join(__dirname, "Client/build")))
@@ -40,48 +48,13 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(buildPath, 'index.html'))
 })
 
+//SQL Server
+const { connectToSqlServer } = require("./Config/ConnectDB")
 
-// postgreesql
-const { db } = require("@vercel/postgres")
-const createTables = async function () {
-    try {
-        const client = await db.connect()
-
-        await client.sql`
-        create table if not exists item (
-            id serial primary key,
-            caption varchar(50) not null,
-            date timestamp not null default CURRENT_TIMESTAMP
-        );
-        `
-        await client.sql`
-        create table if not exists subitem(
-            id serial primary key,
-            itemid integer,
-            caption varchar(50) not null,
-            constraint fk_item FOREIGN key(itemid) references item(id) on delete set null,
-            date timestamp not null default CURRENT_TIMESTAMP
-        );
-        `
-        await client.sql`
-        create table if not exists article (
-            id serial primary key,
-            subitemid integer,
-            title varchar(50) not null,
-            description text,
-            code text,
-            image text,
-            file text,
-            constraint fk_subitem foreign key(subitemid) references subitem(id) on delete set null,
-            date timestamp not null default CURRENT_TIMESTAMP
-        );`
-    } catch (err) {
-        console.log(err.message)
-    }
-}
-
+// SQL Server
+const sql = require('mssql');
+connectToSqlServer()
 //listen to server
 app.listen(port, () => {
     console.log('Listen to http://localhost:8081')
-    createTables()
 })

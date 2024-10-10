@@ -47,8 +47,8 @@ const SubItem = ({ item }) => {
         //         setTextMessage(`Item has been deleted success`)
         //         setShowMessage(true)
         //     } else {
-        //         setError(data.error.message)
-        //         setTextMessage(data.error.message)
+        //         setError(data.error)
+        //         setTextMessage(data.error)
         //         setShowMessage(true)
         //     }
 
@@ -77,8 +77,8 @@ const SubItem = ({ item }) => {
         //             setTextMessage(`Item has been modified success`)
         //             setShowMessage(true)
         //         } else {
-        //             setError(data.error.message)
-        //             setTextMessage(data.error.message)
+        //             setError(data.error)
+        //             setTextMessage(data.error)
         //             setShowMessage(true)
         //         }
         //     }
@@ -117,10 +117,10 @@ const SubItem = ({ item }) => {
                         TransitionComponent={Fade}
                     >
                         <MenuItem onClick={() => openModifyDialog()}>
-                            <span className='text-[blue] text-[0.8rem]'>Modify</span>
+                            <span className='text-[#0000FF] text-[0.8rem]'>Modify</span>
                         </MenuItem>
                         <MenuItem onClick={() => openDeleteDialog()}>
-                            <span className='text-[blue] text-[0.8rem]'>Delete</span>
+                            <span className='text-[#0000FF] text-[0.8rem]'>Delete</span>
                         </MenuItem>
                     </Menu>
                 </div>

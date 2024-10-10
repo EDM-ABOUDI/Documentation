@@ -1,84 +1,67 @@
-const { db } = require("@vercel/postgres")
+const sql = require('mssql');
+const { config } = require('../Config/ConnectDB');
 
 const GetItems = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        select * from item order by date;
+        const { userid } = req.body
+        await sql.connect(config);
+        let items = await sql.query`
+            select * from item where userid = ${userid} order by date;
         `
-            .then(async items => {
-                client.sql`
-                    select * from subitem order by date;
-                `
-                    .then(
-                        (subitems) => {
-                            res.json({ status: "ok", items: items.rows, subitems: subitems.rows })
-                        }
-                    )
-                    .catch(error => res.json({ status: "error", error }))
-            })
-            .catch(error => res.json({ status: "error", error }))
+
+        let subitems = await sql.query`
+            select * from subitem where userid = ${userid} order by date;
+        `
+        return res.json({ status: "ok", items: items.recordset, subitems: subitems.recordset })
     } catch (error) {
-        return res.json({ status: "error", error })
+        return res.json({ status: "error", error: error.message })
     }
 }
 
 const AddItem = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        insert into item (caption) values (${req.body.caption})
+        const { caption, userid } = req.body
+        await sql.connect(config);
+        await sql.query`
+            insert into item (caption,userid) values (${caption},${userid})
         `
-        .then(() => res.json({ status: "ok" }))
-        .catch(error => res.json({ status: "error", error }))
+        return res.json({ status: "ok" })
     } catch (error) {
-        return res.json({ status: "error", error })
+        return res.json({ status: "error", error: error.message })
     }
 }
 
 const DeleteItem = async (req, res) => {
     try {
-        const client = await db.connect()
-
-        client.sql`
+        const { userid } = req.body
+        await sql.connect(config);
+        await sql.query`
             delete from article where subitemid in (
-                select id from subitem where itemid = ${req.params.id}
+                select id from subitem where itemid = ${req.params.id} and userid = ${userid}
             )
         `
-            .then(() => {
-                client.sql`
-                    delete from subitem where itemid = ${req.params.id}
-                `
-                    .then(() => {
-                        client.sql`
-                            delete from item where id = ${req.params.id}
-                        `
-                            .then(() => {
-                                res.json({ status: "ok" })
-                            })
-                            .catch(error => res.json({ status: "error", error }))
-                    })
-                    .catch(error => res.json({ status: "error", error }))
-            })
-            .catch(error => res.json({ status: "error", error }))
-
+        await sql.query`
+            delete from subitem where itemid = ${req.params.id} and userid = ${userid}
+        `
+        await sql.query`
+            delete from item where id = ${req.params.id} and userid = ${userid}
+        `
+        return res.json({ status: "ok" })
     } catch (error) {
-        return res.json({ status: "error", error })
+        return res.json({ status: "error", error: error.message })
     }
 }
 
 const ModifyItem = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        update item set caption = ${req.body.caption} where id = ${req.params.id}
+        const { userid } = req.body
+        await sql.connect(config);
+        await sql.query`
+            update item set caption = ${req.body.caption} where id = ${req.params.id} and userid = ${userid}
         `
-            .then(() => res.json({ status: "ok" }))
-            .catch(error => res.json({ status: "error", error }))
-
-
+        return res.json({ status: "ok" })
     } catch (error) {
-        return res.json({ status: "error", error })
+        return res.json({ status: "error", error: error.message })
     }
 }
 

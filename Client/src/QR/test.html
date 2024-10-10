@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        #qrCanvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple QR Code Generator</h1>
+    <input type="text" id="textInput" placeholder="Enter text" />
+    <button id="generateBtn">Generate QR Code</button>
+    <canvas id="qrCanvas" width="200" height="200"></canvas>
+
+    <script>
+        // Function to generate a simple QR code pattern
+        function generateSimpleQRCode(text) {
+            // Basic QR code data structure
+            const qrSize = 21; // This is a basic size for a QR code
+            const qrData = Array.from({ length: qrSize }, () => Array(qrSize).fill(0));
+
+            // Simple encoding: Fill some squares based on input length
+            const length = text.length;
+
+            // Example logic to fill the QR code pattern based on the input length
+            for (let i = 0; i < length; i++) {
+                const x = (i % qrSize);
+                const y = Math.floor(i / qrSize);
+
+                if (y < qrSize) {
+                    qrData[y][x] = 1; // Fill squares to represent data
+                }
+            }
+
+            // Draw the QR code on the canvas
+            const canvas = document.getElementById('qrCanvas');
+            const ctx = canvas.getContext('2d');
+            const tileSize = 10; // Size of each square in the QR code
+
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the squares
+            for (let y = 0; y < qrSize; y++) {
+                for (let x = 0; x < qrSize; x++) {
+                    if (qrData[y][x] === 1) {
+                        ctx.fillStyle = 'black';
+                        ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
+                    } else {
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
+                    }
+                }
+            }
+        }
+
+        // Event listener for generating the QR code
+        document.getElementById('generateBtn').addEventListener('click', function () {
+            const text = document.getElementById('textInput').value;
+            if (text.trim() === "") {
+                alert("Please enter some text to generate the QR code.");
+                return;
+            }
+            generateSimpleQRCode(text); // Generate the QR code
+        });
+
+        // Optional: Add event listener for 'Enter' key
+        document.getElementById('textInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('generateBtn').click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -30,8 +30,8 @@ const ModifyArticle = () => {
                     setImage(data.article[0].image)
                     setFile(data.article[0].file)
                 } else {
-                    setError(data.error.message)
-                    setTextMessage(data.error.message)
+                    setError(data.error)
+                    setTextMessage(data.error)
                     setShowMessage(true)
                 }
             } catch (error) {
@@ -67,8 +67,8 @@ const ModifyArticle = () => {
                 setShowMessage(true)
                 navigate(`/items/sub/${id}`)
             } else {
-                setError(data.error.message)
-                setTextMessage(data.error.message)
+                setError(data.error)
+                setTextMessage(data.error)
                 setShowMessage(true)
             }
 
@@ -197,7 +197,7 @@ const ModifyArticle = () => {
                     />
                 </div>
                 <button
-                    className="w-fit flex gap-[0.5rem] bg-[blue] py-[0.2rem] px-[0.5rem] rounded-[3px] text-white text-[0.8rem] fw-bold items-center"
+                    className="w-fit flex gap-[0.5rem] bg-[#0000FF] py-[0.2rem] px-[0.5rem] rounded-[3px] text-white text-[0.8rem] fw-bold items-center"
                     onClick={() => handleModify()}
                 >
                     {loading ? 'Loading...' : 'Save'}

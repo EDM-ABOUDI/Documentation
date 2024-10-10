@@ -29,8 +29,8 @@ const Articles = () => {
                 if (data.status = "ok") {
                     setArticles(data.articles)
                 } else {
-                    setError(data.error.message)
-                    setTextMessage(data.error.message)
+                    setError(data.error)
+                    setTextMessage(data.error)
                     setShowMessage(true)
                 }
             } catch (error) {
@@ -72,8 +72,8 @@ const Articles = () => {
                 setShowMessage(true)
                 window.location = "/"
             } else {
-                setError(data.error.message)
-                setTextMessage(data.error.message)
+                setError(data.error)
+                setTextMessage(data.error)
                 setShowMessage(true)
             }
 
@@ -95,8 +95,8 @@ const Articles = () => {
                 setTextMessage(`All articles has been deleted success`)
                 setShowMessage(true)
             } else {
-                setError(data.error.message)
-                setTextMessage(data.error.message)
+                setError(data.error)
+                setTextMessage(data.error)
                 setShowMessage(true)
             }
 
@@ -123,14 +123,14 @@ const Articles = () => {
                     Delete item
                 </button>
                 <NavLink
-                    className="flex gap-[0.2rem] bg-[blue] py-[0.2rem] px-[0.5rem] rounded-[3px] text-white text-[0.8rem] fw-bold items-center"
+                    className="flex gap-[0.2rem] bg-[#0000FF] py-[0.2rem] px-[0.5rem] rounded-[3px] text-white text-[0.8rem] fw-bold items-center"
                     to="add-article"
                 >
                     Add article <FaPlus />
                 </NavLink>
             </div>
             {
-                articles.map(article => (
+                articles?.map(article => (
                     <Article
                         key={article.id}
                         article={article}

@@ -1,17 +1,14 @@
-const { db } = require("@vercel/postgres")
+const sql = require('mssql');
+const { config } = require('../Config/ConnectDB');
 
 const GetArticles = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        select * from article where subitemid = ${req.params.id} order by date;
+        const { userid } = req.body
+        await sql.connect(config);
+        let articles = await sql.query`
+            select * from article where subitemid = ${req.params.id} and userid = ${userid} order by date;
         `
-        .then(
-            (articles) => {
-                res.json({ status: "ok", articles: articles.rows })
-            }
-        )
-        .catch(error => res.json({ status: "error", error }))
+        return res.json({ status: "ok", articles: articles.recordset })
     } catch (error) {
         return res.json({ status: "error", error })
     }
@@ -19,32 +16,34 @@ const GetArticles = async (req, res) => {
 
 const AddArticle = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        insert into article (subitemid,title,description,code,image,file) values (
-            ${req.params.id},
-            ${req.body.title},
-            ${req.body.description},
-            ${req.body.code},
-            ${req.body.image},
-            ${req.body.file}
-        );
+        const { userid } = req.body
+        await sql.connect(config);
+        await sql.query`
+            insert into article (subitemid,title,description,code,image,[file],userid) values (
+                ${req.params.id},
+                ${req.body.title},
+                ${req.body.description},
+                ${req.body.code},
+                ${req.body.image},
+                ${req.body.file},
+                ${userid}
+            );
         `
-        .then(() => res.json({ status: "ok" }))
-        .catch(error => res.json({ status: "error", error }))
+
+        return res.json({ status: "ok" })
     } catch (error) {
-        return res.json({ status: "error", error })
+        return res.json({ status: "error", error: error.message })
     }
 }
 
 const DeleteArticle = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        delete from article where id = ${req.params.aid} and subitemid = ${req.params.id};
+        const { userid } = req.body
+        await sql.connect(config);
+        await sql.query`
+            delete from article where id = ${req.params.aid} and subitemid = ${req.params.id} and userid = ${userid};
         `
-        .then(() => res.json({ status: "ok" }))
-        .catch(error => res.json({ status: "error", error }))
+        return res.json({ status: "ok" })
     } catch (error) {
         return res.json({ status: "error", error })
     }
@@ -52,16 +51,12 @@ const DeleteArticle = async (req, res) => {
 
 const GetArticle = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        select * from article where id = ${req.params.aid} and subitemid = ${req.params.id};
+        const { userid } = req.body
+        await sql.connect(config);
+        let article = await sql.query`
+            select * from article where id = ${req.params.aid} and subitemid = ${req.params.id} and userid = ${userid};
         `
-        .then(
-            (article) => {
-                res.json({ status: "ok", article: article.rows })
-            }
-        )
-        .catch(error => res.json({ status: "error", error }))
+        return res.json({ status: "ok", article: article.recordset })
     } catch (error) {
         return res.json({ status: "error", error })
     }
@@ -69,17 +64,17 @@ const GetArticle = async (req, res) => {
 
 const ModifyArticle = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        update article set 
-        title = ${req.body.title},
-        description = ${req.body.description},
-        code = ${req.body.code},
-        image = ${req.body.image}
-        where id = ${req.params.aid} and subitemid = ${req.params.id}
+        const { userid } = req.body
+        await sql.connect(config);
+        await sql.query`
+            update article set 
+            title = ${req.body.title},
+            description = ${req.body.description},
+            code = ${req.body.code},
+            image = ${req.body.image}
+            where id = ${req.params.aid} and subitemid = ${req.params.id} and userid = ${userid}
         `
-        .then(() => res.json({ status: "ok" }))
-        .catch(error => res.json({ status: "error", error }))
+        return res.json({ status: "ok" })
     } catch (error) {
         return res.json({ status: "error", error })
     }
@@ -87,12 +82,12 @@ const ModifyArticle = async (req, res) => {
 
 const DeleteAllArticles = async (req, res) => {
     try {
-        const client = await db.connect()
-        client.sql`
-        delete from article where subitemid = ${req.params.id};
+        const { userid } = req.body
+        await sql.connect(config);
+        sql.query`
+            delete from article where subitemid = ${req.params.id} and userid = ${userid};
         `
-        .then(() => res.json({ status: "ok" }))
-        .catch(error => res.json({ status: "error", error }))
+        return res.json({ status: "ok" })
     } catch (error) {
         return res.json({ status: "error", error })
     }
